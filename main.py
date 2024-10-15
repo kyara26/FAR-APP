@@ -1,5 +1,6 @@
 import time
 import cv2
+from kivy.uix.popup import Popup
 from kivy.app import App
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen, ScreenManager
@@ -15,10 +16,21 @@ from kivy.graphics.texture import Texture
 Window.size = (310, 670)
 
 class LoadingPage(Screen):
-    pass
+    def __init__(self, **kwargs):
+        super(LoadingPage, self).__init__(**kwargs)
+        Clock.schedule_once(self.change_screen, 5)  # change screen after 8 seconds
+
+    def change_screen(self, dt):
+        self.manager.current = 'homemenu'
 
 class HomeMenu(Screen):
-    pass
+    def __init__(self, **kwargs):
+        super(HomeMenu, self).__init__(**kwargs)
+        Clock.schedule_interval(self.update_time, 1.0)
+
+    def update_time(self, dt):
+        current_time = time.strftime("%I:%M:%S %p") #Real-Time Clock
+        self.ids.clock_label.text = current_time
 
 class FirstAidMenu1(Screen):
     pass
@@ -27,7 +39,30 @@ class FirstAidMenu2(Screen):
     pass
 
 class CameraMenu(Screen):
-    pass
+    def __init__(self, **kwargs):
+        super(CameraMenu, self).__init__(**kwargs)
+        self.capture = cv2.VideoCapture(0)  # Use the first camera
+        Clock.schedule_interval(self.update, 1.0 / 30.0)  # Update at 30 FPS
+
+    def update(self, dt):
+        ret, frame = self.capture.read()
+        if ret:
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame = cv2.flip(frame, 0)
+            self.current_frame = frame  # Store the current frame for capturing
+            texture = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='rgb')
+            texture.blit_buffer(frame.tobytes(), colorfmt='rgb', bufferfmt='ubyte')
+            self.ids.camera_display.texture = texture
+
+    def capture_image(self):
+        if hasattr(self, 'current_frame'): # Save the current frame as an image
+            filename = f"captured_image_{int(time.time())}.png"
+            cv2.imwrite(filename, cv2.cvtColor(self.current_frame, cv2.COLOR_RGB2BGR))
+        else:
+            self.timer.cancel() # stop the timer if the camera is not available
+
+    def on_leave(self):
+        self.capture.release()
 
 class BruisePage(Screen):
     pass
