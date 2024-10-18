@@ -18,7 +18,7 @@ Window.size = (310, 670)
 class LoadingPage(Screen):
     def __init__(self, **kwargs):
         super(LoadingPage, self).__init__(**kwargs)
-        Clock.schedule_once(self.change_screen, 5)  # change screen after 8 seconds
+        Clock.schedule_once(self.change_screen, 2)  # change screen of the duration (seconds)
 
     def change_screen(self, dt):
         self.manager.current = 'homemenu'
@@ -41,8 +41,16 @@ class FirstAidMenu2(Screen):
 class CameraMenu(Screen):
     def __init__(self, **kwargs):
         super(CameraMenu, self).__init__(**kwargs)
+        self.capture = None
+
+    def on_enter(self):
         self.capture = cv2.VideoCapture(0)  # Use the first camera
         Clock.schedule_interval(self.update, 1.0 / 30.0)  # Update at 30 FPS
+
+    def on_leave(self):
+        if self.capture:
+            self.capture.release()
+            Clock.unschedule(self.update)
 
     def update(self, dt):
         ret, frame = self.capture.read()
@@ -56,14 +64,11 @@ class CameraMenu(Screen):
 
     def capture_image(self):
         if hasattr(self, 'current_frame'): # Save the current frame as an image
-            filename = f"captured_image_{int(time.time())}.png"
+            filename = f"captured_image/captured_image_{int(time.time())}.png"
             cv2.imwrite(filename, cv2.cvtColor(self.current_frame, cv2.COLOR_RGB2BGR))
         else:
             self.timer.cancel() # stop the timer if the camera is not available
-
-    def on_leave(self):
-        self.capture.release()
-
+            
 class BruisePage(Screen):
     pass
 
@@ -82,7 +87,10 @@ class BleedingPage(Screen):
 class SprainPage(Screen):
     pass
 
-class MappingMenu(Screen):
+class AmbulanceMenu1(Screen):
+    pass
+
+class AmbulanceMenu2(Screen):
     pass
 
 class ScreenManagement(ScreenManager):

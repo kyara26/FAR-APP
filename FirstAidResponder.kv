@@ -13,7 +13,8 @@ ScreenManagement:
     MinorWoundPage:
     BleedingPage:
     SprainPage:
-    MappingMenu:
+    AmbulanceMenu1:
+    AmbulanceMenu2:
 
 <LoadingPage>:
     name: 'loadingpage'
@@ -25,8 +26,7 @@ ScreenManagement:
     Image:
         id: loading_image
         size_hint: 0.2, 0.1
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3} #Image of gif not showing
-        source: 'Loading.gif'  # use a loading animation gif                    
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
 
 <HomeMenu>:
     name: 'homemenu'
@@ -60,9 +60,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
         
         Image:
             size_hint: 0.90, 0.2
@@ -91,8 +91,7 @@ ScreenManagement:
         Image:
             size_hint: 0.90, 0.2
             pos_hint: {'center_x': 0.5,'center_y': 0.2}
-            source: 'Hotlines.png' 
-        
+            source: 'Hotlines.png'         
 
 <FirstAidMenu1>:
     name: 'firstaidmenu1'
@@ -126,9 +125,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
     
         Button:
             text: '>'
@@ -140,8 +139,7 @@ ScreenManagement:
             background_color:(1, 0, 0, 1)
             halign: 'center'
             valign: 'center'
-            on_release:
-                app.root.current = 'firstaidmenu2'
+            on_release: app.root.current = 'firstaidmenu2'
 
         Button:
             size_hint: 0.90, 0.17
@@ -203,9 +201,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
     
         Button:
             text: '<'
@@ -217,8 +215,7 @@ ScreenManagement:
             background_color:(1, 0, 0, 1)
             halign: 'center'
             valign: 'center'
-            on_release:
-                app.root.current = 'firstaidmenu1'
+            on_release: app.root.current = 'firstaidmenu1'
        
         Button:
             size_hint: 0.90, 0.17
@@ -266,9 +263,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
         
         Image:
             size_hint: 0.90, 0.2
@@ -319,9 +316,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -342,6 +339,7 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'BruiseProcedure.png' 
+
 <AbrasionPage>:
     name: 'abrasionpage'
     canvas.before:
@@ -374,9 +372,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -397,6 +395,7 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'AProcedure.png' 
+
 <BurnPage>:
     name: 'burnpage'
     canvas.before:
@@ -429,9 +428,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -452,6 +451,7 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'BurnProcedure.png' 
+
 <MinorWoundPage>
     name: 'minorwoundpage'
     canvas.before:
@@ -484,9 +484,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -507,6 +507,7 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'MWProcedure.png' 
+
 <BleedingPage>
     name: 'bleedingpage'
     canvas.before:
@@ -539,9 +540,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -562,6 +563,7 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'BleedingProcedure.png' 
+
 <SprainPage>
     name: 'sprainpage'
     canvas.before:
@@ -594,9 +596,9 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu1.png' 
-            background_down: 'MappingMenu1.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu1.png' 
+            background_down: 'AmbulanceMenu1.png'    
+            on_release: app.root.current = 'ambulancemenu1'
 
         Image:
             size_hint: 0.70, 0.16
@@ -617,8 +619,9 @@ ScreenManagement:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
             source: 'SProcedure.png' 
-<MappingMenu>
-    name: 'mappingmenu'
+
+<AmbulanceMenu1>
+    name: 'ambulancemenu1'
     canvas.before:
         Rectangle:
             size:self.size
@@ -649,6 +652,116 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.75,'y': 0.0045}
-            background_normal: 'MappingMenu2.png' 
-            background_down: 'MappingMenu2.png'    
-            on_release: app.root.current = 'mappingmenu'
+            background_normal: 'AmbulanceMenu2.png' 
+            background_down: 'AmbulanceMenu2.png'    
+            on_release: app.root.current = 'ambulancemenu1'
+        
+        Button:
+            text: '>'
+            size_hint: 0.120, 0.05
+            pos_hint: {'center_x': 0.5,'y': 0.093}
+            font_size: 15
+            font_name: 'josefin-sans.bold.ttf'
+            color: (1, 1, 1)
+            background_color:(1, 0, 0, 1)
+            halign: 'center'
+            valign: 'center'
+            on_release: app.root.current = 'ambulancemenu2' 
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.79}
+            source: 'AMHospital 1.png' 
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.65}
+            source: 'AMHospital 2.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.51}
+            source: 'AMHospital 3.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.37}
+            source: 'AMHospital 4.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.23}
+            source: 'AMHospital 5.png'
+        
+<AmbulanceMenu2>
+    name: 'ambulancemenu2'
+    canvas.before:
+        Rectangle:
+            size:self.size
+            source: 'BG MAIN.png'
+    
+    FloatLayout:
+        Button:
+            size_hint: 0.195, 0.07
+            pos_hint: {'x': 0.05,'y': 0.0045}
+            background_normal: 'HomeMenu1.png' 
+            background_down: 'HomeMenu1.png'    
+            on_release: app.root.current = 'homemenu'
+    
+        Button:
+            size_hint: 0.195, 0.07
+            pos_hint: {'x': 0.27,'y': 0.0045}
+            background_normal: 'CameraMenu1.png' 
+            background_down: 'CameraMenu1.png'    
+            on_release: app.root.current = 'cameramenu'
+    
+        Button:
+            size_hint: 0.195, 0.07
+            pos_hint: {'x': 0.5,'y': 0.0045}
+            background_normal: 'FirstAidMenu1.png' 
+            background_down: 'FirstAidMenu1.png'    
+            on_release: app.root.current = 'firstaidmenu1'
+    
+        Button:
+            size_hint: 0.195, 0.07
+            pos_hint: {'x': 0.75,'y': 0.0045}
+            background_normal: 'AmbulanceMenu2.png' 
+            background_down: 'AmbulanceMenu2.png'    
+            on_release: app.root.current = 'ambulancemenu2'
+        
+        Button:
+            text: '<'
+            size_hint: 0.120, 0.05
+            pos_hint: {'center_x': 0.5,'y': 0.093}
+            font_size: 15
+            font_name: 'josefin-sans.bold.ttf'
+            color: (1, 1, 1)
+            background_color:(1, 0, 0, 1)
+            halign: 'center'
+            valign: 'center'
+            on_release: app.root.current = 'ambulancemenu1'
+
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.79}
+            source: 'AMHospital 6.png' 
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.65}
+            source: 'AMHospital 7.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.51}
+            source: 'AMHospital 8.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.37}
+            source: 'AMHospital 9.png'
+        
+        Image:
+            size_hint: 0.90, 0.16
+            pos_hint: {'center_x': 0.5,'center_y': 0.23}
+            source: 'AMHospital 10.png'         
