@@ -65,7 +65,7 @@ class CameraMenu(Screen):
         if hasattr(self, 'current_frame'):
             self.show_loading_popup()
 
-            filename = f"capture_images/captured_image_{int(time.time())}.png"
+            filename = f"captured_image/captured_image_{int(time.time())}.png"
             cv2.imwrite(filename, cv2.cvtColor(self.current_frame, cv2.COLOR_RGB2BGR))
 
             self.dismiss_loading_popup()
