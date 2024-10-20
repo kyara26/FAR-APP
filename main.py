@@ -18,7 +18,7 @@ Window.size = (310, 670)
 class LoadingPage(Screen):
     def __init__(self, **kwargs):
         super(LoadingPage, self).__init__(**kwargs)
-        Clock.schedule_once(self.change_screen, 2)  # change screen of the duration (seconds)
+        Clock.schedule_once(self.change_screen, 5)  # change screen after 8 seconds
 
     def change_screen(self, dt):
         self.manager.current = 'homemenu'
@@ -41,34 +41,58 @@ class FirstAidMenu2(Screen):
 class CameraMenu(Screen):
     def __init__(self, **kwargs):
         super(CameraMenu, self).__init__(**kwargs)
-        self.capture = None
-
-    def on_enter(self):
-        self.capture = cv2.VideoCapture(0)  # Use the first camera
+        self.capture = None  # Set capture to None initially
         Clock.schedule_interval(self.update, 1.0 / 30.0)  # Update at 30 FPS
 
-    def on_leave(self):
-        if self.capture:
-            self.capture.release()
-            Clock.unschedule(self.update)
+    def on_enter(self):
+        # Reinitialize the camera when the user enters the screen
+        if self.capture is None:
+            self.capture = cv2.VideoCapture(0)  # Reopen the camera
+            print("Camera initialized")
 
     def update(self, dt):
-        ret, frame = self.capture.read()
-        if ret:
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frame = cv2.flip(frame, 0)
-            self.current_frame = frame  # Store the current frame for capturing
-            texture = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='rgb')
-            texture.blit_buffer(frame.tobytes(), colorfmt='rgb', bufferfmt='ubyte')
-            self.ids.camera_display.texture = texture
+        if self.capture is not None:
+            ret, frame = self.capture.read()
+            if ret:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame = cv2.flip(frame, 0)
+                self.current_frame = frame  # Store the current frame for capturing
+                texture = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='rgb')
+                texture.blit_buffer(frame.tobytes(), colorfmt='rgb', bufferfmt='ubyte')
+                self.ids.camera_display.texture = texture
 
     def capture_image(self):
-        if hasattr(self, 'current_frame'): # Save the current frame as an image
-            filename = f"captured_image/captured_image_{int(time.time())}.png"
+        if hasattr(self, 'current_frame'):
+            self.show_loading_popup()
+
+            filename = f"capture_images/captured_image_{int(time.time())}.png"
             cv2.imwrite(filename, cv2.cvtColor(self.current_frame, cv2.COLOR_RGB2BGR))
+
+            self.dismiss_loading_popup()
         else:
-            self.timer.cancel() # stop the timer if the camera is not available
-            
+            self.timer.cancel()  # stop the timer if the camera is not available
+
+    def show_loading_popup(self):
+        self.loading_popup = Popup(
+            title="Capturing Image",
+            content=Label(text="Please wait..."),
+            size_hint=(None, None), size=(300, 200),
+            auto_dismiss=False
+        )
+        self.loading_popup.open()  # Show the popup
+
+    def dismiss_loading_popup(self):
+        if hasattr(self, 'loading_popup'):
+            self.loading_popup.dismiss()
+
+    def on_leave(self):
+        # Release the camera when the user leaves the screen
+        if self.capture is not None:
+            self.capture.release()
+            self.capture = None  # Set to None to reinitialize next time
+            print("Camera released")
+
+
 class BruisePage(Screen):
     pass
 
@@ -87,10 +111,7 @@ class BleedingPage(Screen):
 class SprainPage(Screen):
     pass
 
-class AmbulanceMenu1(Screen):
-    pass
-
-class AmbulanceMenu2(Screen):
+class MappingMenu(Screen):
     pass
 
 class ScreenManagement(ScreenManager):
