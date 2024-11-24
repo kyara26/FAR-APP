@@ -2,6 +2,7 @@ import time
 import cv2
 import numpy as np
 import requests
+import sqlite3
 import matplotlib.pyplot as plt
 from kivy.uix.popup import Popup
 from kivy.app import App
@@ -18,6 +19,21 @@ from kivy.graphics.texture import Texture
 
 Window.size = (310, 670)
 
+def create_database():
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY,
+            email TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+create_database()
+
 class LoadingPage(Screen):
     def __init__(self, **kwargs):
         super(LoadingPage, self).__init__(**kwargs)
@@ -30,10 +46,51 @@ class StartPage(Screen):
     pass
 
 class LoginPage(Screen):
-    pass
+    def login_user(self):
+        email = self.ids.email_input.text
+        password = self.ids.password_input.text
+
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+        user = cursor.fetchone()
+        conn.close()
+
+        if user:
+            self.manager.current = 'homemenu'
+            App.get_running_app().current_user_email = email
+        else:
+            self.show_popup("Error", "Invalid Email or Password")
+
+    def show_popup(self, title, message):
+        popup = Popup(title=title, content=Label(text=message), size_hint=(0.8, 0.3))
+        popup.open()
 
 class RegisterPage(Screen):
-    pass
+    def register_user(self):
+        email = self.ids.email_input.text
+        password = self.ids.password_input.text
+        confirm_password = self.ids.confirm_password_input.text
+
+        if password != confirm_password:
+            self.show_popup("Error", "Passwords do not match")
+            return
+
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        try:
+            cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)", (email, password))
+            conn.commit()
+            self.show_popup("Success", "Registration successful!")
+            self.manager.current = 'loginpage'
+        except sqlite3.IntegrityError:
+            self.show_popup("Error", "Account already exists")
+        finally:
+            conn.close()
+
+    def show_popup(self, title, message):
+        popup = Popup(title=title, content=Label(text=message), size_hint=(0.8, 0.3))
+        popup.open()
 
 class HomeMenu(Screen):
     def __init__(self, **kwargs):
@@ -209,10 +266,54 @@ class AmbulanceMenu2(Screen):
     pass
 
 class SettingsMenu1(Screen):
-    pass
+    def on_enter(self):
+        # Display the logged in user's email and password
+        email = App.get_running_app().current_user_email
+        self.ids.email_label.text = f"{email}"
+        
+        # Fetch password from the database
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT password FROM users WHERE email = ?", (email,))
+        password = cursor.fetchone()
+        conn.close()
+        
+        if password:
+            self.ids.password_label.text = f"{password[0]}"
 
 class SettingsMenu2(Screen):
-    pass
+    def save_changes(self):
+        email = self.ids.email_input.text
+        new_password = self.ids.password_input.text
+        confirm_password = self.ids.confirm_password_input.text
+
+        current_email = App.get_running_app().current_user_email
+
+        if new_password != confirm_password:
+            self.show_popup("Error", "Passwords do not match")
+            return
+
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        try:
+            # Update email and password in the database
+            cursor.execute("UPDATE users SET email = ?, password = ? WHERE email = ?", (email, new_password, current_email))
+            conn.commit()
+            App.get_running_app().current_user_email = email  # Update the current user's email
+            self.show_popup("Success", "Successfully Saved!")
+            self.manager.current = 'settingsmenu1'
+            # Update the email and password display in SettingsMenu1
+            settings_menu1 = self.manager.get_screen('settingsmenu1')
+            settings_menu1.ids.email_label.text = email
+            settings_menu1.ids.password_label.text = new_password  # Update password display
+        except sqlite3.Error as e:
+            self.show_popup("Error", f"An error occurred: {e}")
+        finally:
+            conn.close()
+
+    def show_popup(self, title, message):
+        popup = Popup(title=title, content=Label(text=message), size_hint=(0.8, 0.3))
+        popup.open()
 
 class ScreenManagement(ScreenManager):
     pass
@@ -222,8 +323,9 @@ class WindowManager(ScreenManager):
 
 file = Builder.load_file('FirstAidResponder.kv')
 
-class FirstAidApp(App):
+class FirstAidResponderApp(App):
     def build(self):
+        self.icon = "Logo.png"
         return file
     
-FirstAidApp().run()
+FirstAidResponderApp().run()

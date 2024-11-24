@@ -105,7 +105,7 @@ ScreenManagement:
             background_color:(1, 0, 0, 1)
             halign: 'center'
             valign: 'center'
-            on_release: app.root.current = 'homemenu'
+            on_release: root.login_user()
 
         Button:
             text: '<'
@@ -181,7 +181,7 @@ ScreenManagement:
             background_color:(1, 0, 0, 1)
             halign: 'center'
             valign: 'center'
-            on_release: app.root.current = 'loginpage'
+            on_release: root.register_user()
 
 <HomeMenu>:
     name: 'homemenu'
@@ -1164,6 +1164,22 @@ ScreenManagement:
             halign: 'center'
             valign: 'center'
             on_release: app.root.current = 'settingsmenu2'
+        
+        Label:
+            id: email_label
+            size_hint: 0.8, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+            font_size: 20
+            font_name: 'josefin-sans.bold.ttf'
+            color: (0, 0, 0, 1)
+        
+        Label:
+            id: password_label
+            size_hint: 0.8, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.54}
+            font_size: 20
+            font_name: 'josefin-sans.bold.ttf'
+            color: (0, 0, 0, 1)
 
 
 
@@ -1207,8 +1223,8 @@ ScreenManagement:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu2.png' 
-            background_down: 'SettingsMenu2.png'    
+            background_normal: 'SettingsMenu1.png' 
+            background_down: 'SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Button:
@@ -1221,9 +1237,11 @@ ScreenManagement:
             background_color:(1, 0, 0, 1)
             halign: 'center'
             valign: 'center'
-            on_release: app.root.current = 'settingsmenu1'
-        
+            on_release: 
+                root.save_changes()  # Call the save_changes method
+
         TextInput:
+            id: email_input
             size_hint: 0.8, 0.06
             pos_hint: {'center_x': 0.5, 'center_y': 0.64}
             multiline: False
@@ -1233,20 +1251,20 @@ ScreenManagement:
             font_size: 20
 
         TextInput:
+            id: password_input
             size_hint: 0.8, 0.06
             pos_hint: {'center_x': 0.5, 'center_y': 0.54}
             multiline: False
-            #password: True  # Mask the input
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
             font_name: 'josefin-sans.bold.ttf'
             font_size: 20
         
         TextInput:
+            id: confirm_password_input
             size_hint: 0.8, 0.06
             pos_hint: {'center_x': 0.5, 'center_y': 0.44}
             multiline: False
-            #password: True  # Mask the input
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
             font_name: 'josefin-sans.bold.ttf'
