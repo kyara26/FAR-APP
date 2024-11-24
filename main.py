@@ -15,6 +15,7 @@ from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivy.graphics.texture import Texture
 
+
 Window.size = (310, 670)
 
 class LoadingPage(Screen):
@@ -23,7 +24,16 @@ class LoadingPage(Screen):
         Clock.schedule_once(self.change_screen, 2)
 
     def change_screen(self, dt):
-        self.manager.current = 'homemenu'
+        self.manager.current = 'startpage'
+
+class StartPage(Screen):
+    pass
+
+class LoginPage(Screen):
+    pass
+
+class RegisterPage(Screen):
+    pass
 
 class HomeMenu(Screen):
     def __init__(self, **kwargs):
@@ -98,12 +108,12 @@ class CameraMenu(Screen):
         # Send image to Roboflow API
         injury_types = self.detect_injury(filename)
         # Delay for processing effect
-        Clock.schedule_once(lambda dt: self.navigate_to_page(injury_types), 2)
+        Clock.schedule_once(lambda dt: self.navigate_to_page(injury_types), 1)
 
     def detect_injury(self, image_path):  # To be updated of training model
         # Replace with your Roboflow API URL and API Key
         project_name = "wound-assessment"  # Use your project ID here in lowercase, with dashes instead of spaces
-        model_version = "2"  # Specify your model version (e.g., "2" for version 2)
+        model_version = "6"  # Specify your model version (e.g., "2" for version 2)
         api_key = "u20PAsYXkCCxa5vJtLEv"  # Replace with your actual API key
 
         # Formulate the correct API endpoint URL
@@ -196,6 +206,12 @@ class AmbulanceMenu1(Screen):
     pass
 
 class AmbulanceMenu2(Screen):
+    pass
+
+class SettingsMenu1(Screen):
+    pass
+
+class SettingsMenu2(Screen):
     pass
 
 class ScreenManagement(ScreenManager):
