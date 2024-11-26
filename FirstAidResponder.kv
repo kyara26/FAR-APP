@@ -27,7 +27,7 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'MobileAppBG.png'
+            source: 'asset/MobileAppBG.png'
     
     Image:
         id: loading_image
@@ -39,7 +39,7 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'START.png' 
+            source: 'asset/START.png' 
     
     FloatLayout:
         Button:
@@ -47,7 +47,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.34}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -59,7 +59,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.26}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -71,7 +71,7 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'LOG-IN.png' 
+            source: 'asset/LOG-IN.png' 
     
     FloatLayout:
         TextInput:
@@ -81,7 +81,7 @@ ScreenManagement:
             multiline: False
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
 
         TextInput:
@@ -92,7 +92,7 @@ ScreenManagement:
             #password: True  # Mask the input
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
 
         Button:
@@ -100,7 +100,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.31}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -112,7 +112,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -124,7 +124,7 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'REGISTER.png' 
+            source: 'asset/REGISTER.png' 
     
     FloatLayout:
         TextInput:
@@ -134,7 +134,7 @@ ScreenManagement:
             multiline: False
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
 
         TextInput:
@@ -145,7 +145,7 @@ ScreenManagement:
             #password: True  # Mask the input
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
         
         TextInput:
@@ -156,7 +156,7 @@ ScreenManagement:
             #password: True  # Mask the input
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
 
         Button:
@@ -164,7 +164,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -176,7 +176,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.22}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -188,115 +188,115 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png' 
+            source: 'asset/BG MAIN.png' 
         
     FloatLayout:
 
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
 
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu2.png' 
-            background_down: 'HomeMenu2.png'    
+            background_normal: 'asset/HomeMenu2.png' 
+            background_down: 'asset/HomeMenu2.png'    
             on_release: app.root.current = 'homemenu'
       
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png'
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png'
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Image:
             size_hint: 0.90, 0.2
             pos_hint: {'center_x': 0.5,'center_y': 0.82}
-            source: 'HomeText.png'      
+            source: 'asset/HomeText.png'      
         
         Image:
             id: clock_image
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.69} 
-            source: 'ClockBox.png' 
+            source: 'asset/ClockBox.png' 
 
         Label:
             id: clock_label
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.69}
             font_size: 45
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
 
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.46} #Change the Calendar
-            source: 'November.png' 
+            source: 'asset/November.png' 
         
         Image:
             size_hint: 0.90, 0.2
             pos_hint: {'center_x': 0.5,'center_y': 0.2}
-            source: 'Hotlines.png'         
+            source: 'asset/Hotlines.png'         
 
 <FirstAidMenu1>:
     name: 'firstaidmenu1'
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu2.png' 
-            background_down: 'FirstAidMenu2.png'    
+            background_normal: 'asset/FirstAidMenu2.png' 
+            background_down: 'asset/FirstAidMenu2.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
     
         Button:
@@ -304,7 +304,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.5,'y': 0.093}
             font_size: 15
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -314,29 +314,29 @@ ScreenManagement:
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.78}
-            background_normal: 'Bruise.png' 
-            background_down: 'Bruise.png'    
+            background_normal: 'asset/Bruise.png' 
+            background_down: 'asset/Bruise.png'    
             on_release: app.root.current = 'bruisepage'
 
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.6}
-            background_normal: 'Abrasion.png' 
-            background_down: 'Abrasion.png'    
+            background_normal: 'asset/Abrasion.png' 
+            background_down: 'asset/Abrasion.png'    
             on_release: app.root.current = 'abrasionpage'
         
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.42}
-            background_normal: 'Burn.png' 
-            background_down: 'Burn.png'    
+            background_normal: 'asset/Burn.png' 
+            background_down: 'asset/Burn.png'    
             on_release: app.root.current = 'burnpage'
         
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.24}
-            background_normal: 'MinorWound.png' 
-            background_down: 'MinorWound.png'    
+            background_normal: 'asset/MinorWound.png' 
+            background_down: 'asset/MinorWound.png'    
             on_release: app.root.current = 'minorwoundpage'
 
 <FirstAidMenu2>:
@@ -344,42 +344,42 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu2.png'
-            background_down: 'FirstAidMenu2.png'    
+            background_normal: 'asset/FirstAidMenu2.png'
+            background_down: 'asset/FirstAidMenu2.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
 
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
     
         Button:
@@ -387,7 +387,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.5,'y': 0.093}
             font_size: 15
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -397,15 +397,15 @@ ScreenManagement:
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.78}
-            background_normal: 'Bleeding.png' 
-            background_down: 'Bleeding.png'    
+            background_normal: 'asset/Bleeding.png' 
+            background_down: 'asset/Bleeding.png'    
             on_release: app.root.current = 'bleedingpage'
         
         Button:
             size_hint: 0.90, 0.17
             pos_hint: {'center_x': 0.5,'center_y': 0.6}
-            background_normal: 'Sprain.png' 
-            background_down: 'Sprain.png'    
+            background_normal: 'asset/Sprain.png' 
+            background_down: 'asset/Sprain.png'    
             on_release: app.root.current = 'sprainpage'
 
 <CameraMenu>:
@@ -413,54 +413,54 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
 
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu2.png' 
-            background_down: 'CameraMenu2.png'    
+            background_normal: 'asset/CameraMenu2.png' 
+            background_down: 'asset/CameraMenu2.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Image:
             size_hint: 0.90, 0.2
             pos_hint: {'center_x': 0.5,'center_y': 0.84}
-            source: 'CameraText.png' 
+            source: 'asset/CameraText.png' 
         
         Button:
             size_hint: 0.2, 0.1
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-            background_normal: 'Camera.png' 
-            background_down: 'Camera.png'    
+            background_normal: 'asset/Camera.png' 
+            background_down: 'asset/Camera.png'    
             on_release: root.capture_image()  # Capture image when button is pressed
 
         Image:
@@ -473,7 +473,7 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'MobileAppLP.png'
+            source: 'asset/MobileAppLP.png'
     
     FloatLayout:
         Button:
@@ -481,7 +481,7 @@ ScreenManagement:
             size_hint: 0.18, 0.07
             pos_hint: {'center_x': 0.5,'center_y': 0.34}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -493,70 +493,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.81}
-            source: 'BruiseText.png'     
+            source: 'asset/BruiseText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'BruiseMaterials.png' 
+            source: 'asset/BruiseMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'BruiseSubMaterials.png' 
+            source: 'asset/BruiseSubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'BruiseProcedure.png' 
+            source: 'asset/BruiseProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -568,70 +568,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.81}
-            source: 'AText.png'     
+            source: 'asset/AText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'AMaterials.png' 
+            source: 'asset/AMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'ASubMaterials.png' 
+            source: 'asset/ASubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'AProcedure.png' 
+            source: 'asset/AProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -643,70 +643,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.81}
-            source: 'BurnText.png'     
+            source: 'asset/BurnText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'BurnMaterials.png' 
+            source: 'asset/BurnMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'BurnSubMaterials.png' 
+            source: 'asset/BurnSubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'BurnProcedure.png' 
+            source: 'asset/BurnProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -718,70 +718,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.82}
-            source: 'MWText.png'     
+            source: 'asset/MWText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'MWMaterials.png' 
+            source: 'asset/MWMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'MWSubMaterials.png' 
+            source: 'asset/MWSubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'MWProcedure.png' 
+            source: 'asset/MWProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -793,70 +793,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.81}
-            source: 'BleedingText.png'     
+            source: 'asset/BleedingText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'BleedingMaterials.png' 
+            source: 'asset/BleedingMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'BleedingSubMaterials.png' 
+            source: 'asset/BleedingSubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'BleedingProcedure.png' 
+            source: 'asset/BleedingProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -868,70 +868,70 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
 
         Image:
             size_hint: 0.70, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.82}
-            source: 'SText.png'     
+            source: 'asset/SText.png'     
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.68}
-            source: 'SMaterials.png' 
+            source: 'asset/SMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.52}
-            source: 'SSubMaterials.png' 
+            source: 'asset/SSubMaterials.png' 
         
         Image:
             size_hint: 0.90, 0.35
             pos_hint: {'center_x': 0.5,'center_y': 0.27}
-            source: 'SProcedure.png' 
+            source: 'asset/SProcedure.png' 
         
         Button:
             text: '<'
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -943,42 +943,42 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu2.png' 
-            background_down: 'AmbulanceMenu2.png'    
+            background_normal: 'asset/AmbulanceMenu2.png' 
+            background_down: 'asset/AmbulanceMenu2.png'    
             on_release: app.root.current = 'ambulancemenu1'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Button:
@@ -986,7 +986,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.5,'y': 0.093}
             font_size: 15
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -996,69 +996,69 @@ ScreenManagement:
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.79}
-            source: 'AMHospital 1.png' 
+            source: 'asset/AMHospital 1.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.65}
-            source: 'AMHospital 2.png'
+            source: 'asset/AMHospital 2.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.51}
-            source: 'AMHospital 3.png'
+            source: 'asset/AMHospital 3.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.37}
-            source: 'AMHospital 4.png'
+            source: 'asset/AMHospital 4.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.23}
-            source: 'AMHospital 5.png'
+            source: 'asset/AMHospital 5.png'
         
 <AmbulanceMenu2>
     name: 'ambulancemenu2'
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'BG MAIN.png'
+            source: 'asset/BG MAIN.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu2.png' 
-            background_down: 'AmbulanceMenu2.png'    
+            background_normal: 'asset/AmbulanceMenu2.png' 
+            background_down: 'asset/AmbulanceMenu2.png'    
             on_release: app.root.current = 'ambulancemenu2'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Button:
@@ -1066,7 +1066,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.5,'y': 0.093}
             font_size: 15
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -1076,69 +1076,69 @@ ScreenManagement:
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.79}
-            source: 'AMHospital 6.png' 
+            source: 'asset/AMHospital 6.png' 
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.65}
-            source: 'AMHospital 7.png'
+            source: 'asset/AMHospital 7.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.51}
-            source: 'AMHospital 8.png'
+            source: 'asset/AMHospital 8.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.37}
-            source: 'AMHospital 9.png'
+            source: 'asset/AMHospital 9.png'
         
         Image:
             size_hint: 0.90, 0.16
             pos_hint: {'center_x': 0.5,'center_y': 0.23}
-            source: 'AMHospital 10.png'         
+            source: 'asset/AMHospital 10.png'         
 
 <SettingsMenu1>
     name: 'settingsmenu1'
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'SettingsBG1.png'
+            source: 'asset/SettingsBG1.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu2'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu2.png' 
-            background_down: 'SettingsMenu2.png'    
+            background_normal: 'asset/SettingsMenu2.png' 
+            background_down: 'asset/SettingsMenu2.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Button:
@@ -1146,7 +1146,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.2}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -1158,7 +1158,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.42}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -1170,7 +1170,7 @@ ScreenManagement:
             size_hint: 0.8, 0.1
             pos_hint: {'center_x': 0.5, 'center_y': 0.65}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (0, 0, 0, 1)
         
         Label:
@@ -1178,10 +1178,8 @@ ScreenManagement:
             size_hint: 0.8, 0.1
             pos_hint: {'center_x': 0.5, 'center_y': 0.54}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (0, 0, 0, 1)
-
-
 
 <SettingsMenu2> 
 #Changing the email and password
@@ -1189,42 +1187,42 @@ ScreenManagement:
     canvas.before:
         Rectangle:
             size:self.size
-            source: 'SettingsBG2.png'
+            source: 'asset/SettingsBG2.png'
     
     FloatLayout:
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.02,'y': 0.0045}
-            background_normal: 'HomeMenu1.png' 
-            background_down: 'HomeMenu1.png'    
+            background_normal: 'asset/HomeMenu1.png' 
+            background_down: 'asset/HomeMenu1.png'    
             on_release: app.root.current = 'homemenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.2,'y': 0.0045}
-            background_normal: 'CameraMenu1.png' 
-            background_down: 'CameraMenu1.png'    
+            background_normal: 'asset/CameraMenu1.png' 
+            background_down: 'asset/CameraMenu1.png'    
             on_release: app.root.current = 'cameramenu'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'center_x': 0.5,'y': 0.0045}
-            background_normal: 'FirstAidMenu1.png' 
-            background_down: 'FirstAidMenu1.png'    
+            background_normal: 'asset/FirstAidMenu1.png' 
+            background_down: 'asset/FirstAidMenu1.png'    
             on_release: app.root.current = 'firstaidmenu1'
     
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.6,'y': 0.0045}
-            background_normal: 'AmbulanceMenu1.png' 
-            background_down: 'AmbulanceMenu1.png'    
+            background_normal: 'asset/AmbulanceMenu1.png' 
+            background_down: 'asset/AmbulanceMenu1.png'    
             on_release: app.root.current = 'ambulancemenu2'
         
         Button:
             size_hint: 0.195, 0.07
             pos_hint: {'x': 0.79,'y': 0.0045}
-            background_normal: 'SettingsMenu1.png' 
-            background_down: 'SettingsMenu1.png'    
+            background_normal: 'asset/SettingsMenu1.png' 
+            background_down: 'asset/SettingsMenu1.png'    
             on_release: app.root.current = 'settingsmenu1'
         
         Button:
@@ -1232,7 +1230,7 @@ ScreenManagement:
             size_hint: 0.4, 0.06
             pos_hint: {'center_x': 0.5,'y': 0.3}
             font_size: 25
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'
@@ -1247,7 +1245,7 @@ ScreenManagement:
             multiline: False
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
 
         TextInput:
@@ -1257,7 +1255,7 @@ ScreenManagement:
             multiline: False
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
         
         TextInput:
@@ -1267,7 +1265,7 @@ ScreenManagement:
             multiline: False
             background_color: (1, 1, 1, 1)  # White background for input
             foreground_color: (0, 0, 0, 1)  # Black text
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             font_size: 20
         
         Button:
@@ -1275,7 +1273,7 @@ ScreenManagement:
             size_hint: 0.120, 0.05
             pos_hint: {'center_x': 0.12,'y': 0.92}
             font_size: 20
-            font_name: 'josefin-sans.bold.ttf'
+            font_name: 'asset/josefin-sans.bold.ttf'
             color: (1, 1, 1)
             background_color:(1, 0, 0, 1)
             halign: 'center'

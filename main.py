@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import requests
 import sqlite3
-import matplotlib.pyplot as plt
 from kivy.uix.popup import Popup
 from kivy.app import App
 from kivy.uix.screenmanager import Screen, ScreenManager
@@ -148,12 +147,28 @@ class CameraMenu(Screen):
     def apply_histogram_equalization(self, image_path):
         # Load the captured image
         image = cv2.imread(image_path)
-        
+    
         # Convert to grayscale
         gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-        # Apply histogram equalization
-        equalized_image = cv2.equalizeHist(gray_image)
+        # Calculate histogram
+        hist, bins = np.histogram(gray_image.flatten(), 256, [0, 256])
+
+        # Calculate cumulative distribution function (CDF)
+        cdf = hist.cumsum()
+    
+        # Normalize the CDF
+        cdf_normalized = cdf * hist.max() / cdf.max()
+
+        # Mask all pixels with a value of 0 in the CDF
+        cdf_m = np.ma.masked_equal(cdf, 0)
+
+        # Normalize the CDF to the range [0, 255]
+        cdf_m = (cdf_m - cdf_m.min()) * 255 / (cdf_m.max() - cdf_m.min())
+        cdf = np.ma.filled(cdf_m, 0).astype('uint8')
+
+        # Map the original gray image pixels through the normalized CDF
+        equalized_image = cdf[gray_image]
 
         # Save the equalized image
         equalized_filename = f"captured_image/equalized_image_{int(time.time())}.png"
@@ -325,7 +340,7 @@ file = Builder.load_file('FirstAidResponder.kv')
 
 class FirstAidResponderApp(App):
     def build(self):
-        self.icon = "Logo.png"
+        self.icon = "asset/Logo.png"
         return file
     
 FirstAidResponderApp().run()
