@@ -106,6 +106,9 @@ class FirstAidMenu1(Screen):
 class FirstAidMenu2(Screen):
     pass
 
+class FirstAidMenu3(Screen):
+    pass
+
 class CameraMenu(Screen):
     def __init__(self, **kwargs):
         super(CameraMenu, self).__init__(**kwargs)
@@ -272,6 +275,24 @@ class BleedingPage(Screen):
     pass
 
 class SprainPage(Screen):
+    pass
+
+class LacerationPage(Screen):
+    pass
+
+class PunctureWoundPage(Screen):
+    pass
+
+class BiteWoundPage(Screen):
+    pass
+
+class InflammationWoundPage(Screen):
+    pass
+
+class VenousWoundPage(Screen):
+    pass
+
+class PressureWoundPage(Screen):
     pass
 
 class AmbulanceMenu1(Screen):
