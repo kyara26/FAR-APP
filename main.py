@@ -188,7 +188,7 @@ class CameraMenu(Screen):
     def detect_injury(self, image_path):  # To be updated of training model
         # Replace with your Roboflow API URL and API Key
         project_name = "wound-assessment"  # Use your project ID here in lowercase, with dashes instead of spaces
-        model_version = "6"  # Specify your model version (e.g., "2" for version 2)
+        model_version = "7"  # Specify your model version (e.g., "2" for version 2)
         api_key = "u20PAsYXkCCxa5vJtLEv"  # Replace with your actual API key
 
         # Formulate the correct API endpoint URL
@@ -204,11 +204,10 @@ class CameraMenu(Screen):
         # Check if the request was successful
         if response.status_code == 200:
             predictions = response.json()
-            #print(predictions)  # Print the entire response to see its structure
             # Process the predictions and return the wound types
             return self.process_predictions(predictions)
         else:
-            print(f"Error: {response.status_code} - {response.text}")
+            print(f"Error: {response.status_code} - {response.text }")
             return None
 
     def process_predictions(self, predictions):
@@ -226,18 +225,36 @@ class CameraMenu(Screen):
             confidence = prediction['confidence'] if 'confidence' in prediction else 0
             
             # Adjust confidence thresholds as needed for different injuries
-            if class_name == 'bruise' and confidence >= 0.5:
+            if class_name == 'bruise' and confidence >= 0.7:  # Increased threshold
                 detected_injuries.append('bruise')
                 print("Injury found: Bruise detected with confidence", confidence)
-            elif class_name == 'abrasion' and confidence >= 0.5:
+            elif class_name == 'abrasion' and confidence >= 0.7:  # Increased threshold
                 detected_injuries.append('abrasion')
                 print("Injury found: Abrasion detected with confidence", confidence)
-            elif class_name == 'burn' and confidence >= 0.5:
+            elif class_name == 'burn' and confidence >= 0.7:  # Increased threshold
                 detected_injuries.append('burn')
                 print("Injury found: Burn detected with confidence", confidence)
-            elif class_name == 'minor_wound' and confidence >= 0.5:
+            elif class_name == 'minor_wound' and confidence >= 0.7:  # Increased threshold
                 detected_injuries.append('minor_wound')
-                print("Injury found: Minor wound detected with confidence", confidence) #Cannot be detected
+                print("Injury found: Minor wound detected with confidence", confidence)
+            elif class_name == 'laceration' and confidence >= 0.7:  # New type
+                detected_injuries.append('laceration')
+                print("Injury found: Laceration detected with confidence", confidence)
+            elif class_name == 'puncture' and confidence >= 0.7:  # New type
+                detected_injuries.append('puncture wound')
+                print("Injury found: Puncture wound detected with confidence", confidence)
+            elif class_name == 'bite' and confidence >= 0.7:  # New type
+                detected_injuries.append('bite wound')
+                print("Injury found: Bite wound detected with confidence", confidence)
+            elif class_name == 'inflammation' and confidence >= 0.7:  # New type
+                detected_injuries.append('inflammation')
+                print("Injury found: Inflammation detected with confidence", confidence)
+            elif class_name == 'venous' and confidence >= 0.7:  # New type
+                detected_injuries.append('venous')
+                print("Injury found: Venous wound detected with confidence", confidence)
+            elif class_name == 'pressure' and confidence >= 0.7:  # New type
+                detected_injuries.append('pressure wound')
+                print("Injury found: Pressure wound detected with confidence", confidence)
 
         if not detected_injuries:
             print("No recognized injury types in predictions.")
@@ -252,9 +269,21 @@ class CameraMenu(Screen):
             self.manager.current = 'burnpage'
         elif 'minor_wound' in injury_types:
             self.manager.current = 'minorwoundpage'
+        elif 'laceration' in injury_types:
+            self.manager.current = 'lacerationpage'
+        elif 'puncture' in injury_types:
+            self.manager.current = 'puncturewoundpage'
+        elif 'bite' in injury_types:
+            self.manager.current = 'bitewoundpage'
+        elif 'inflammation' in injury_types:
+            self.manager.current = 'inflammationwoundpage'
+        elif 'venous' in injury_types:
+            self.manager.current = 'venouswoundpage'
+        elif 'pressure' in injury_types:
+            self.manager.current = 'pressurewoundpage'
         else:
             print("No injury detected or unhandled injury type.")
-                
+                         
 class ProcessingPage(Screen):
     def __init__(self, **kwargs):
         super(ProcessingPage, self).__init__(**kwargs)
